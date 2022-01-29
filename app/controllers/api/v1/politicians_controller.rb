@@ -1,4 +1,4 @@
-class PoliticiansController < ApplicationController
+class Api::V1::PoliticiansController < ApplicationController
   before_action :set_politician, only: %i[ show update destroy ]
 
   # GET /politicians
