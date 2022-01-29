@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_044554) do
+ActiveRecord::Schema.define(version: 2022_01_27_014650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "politician_records", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.string "description"
+    t.integer "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "politician_id"
+    t.index ["politician_id"], name: "index_politician_records_on_politician_id"
+  end
+
+  create_table "politicians", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "legislature"
+    t.boolean "active"
+    t.integer "party"
+    t.date "birth_date"
+    t.string "telephone"
+    t.string "photo_url"
+    t.string "legislative_experience"
+    t.date "swearing_date"
+    t.string "academic_preparation"
+    t.string "location"
+    t.string "last_degree_of_studies"
+    t.string "district"
+    t.string "city"
+    t.boolean "relative_majority"
+    t.integer "category"
+    t.jsonb "social_links"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "state_id"
+    t.index ["state_id"], name: "index_politicians_on_state_id"
+  end
 
   create_table "states", force: :cascade do |t|
     t.string "name"
@@ -22,4 +58,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_044554) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "politician_records", "politicians"
+  add_foreign_key "politicians", "states"
 end

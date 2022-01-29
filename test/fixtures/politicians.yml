@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  legislature: MyString
+  active: false
+  party: 1
+  birth_date: 2022-01-21
+  telephone: MyString
+  photo_url: MyString
+  legislative_experience: MyString
+  swearing_date: 2022-01-21
+  academic_preparation: MyString
+  location: MyString
+  last_degree_of_studies: MyString
+  district: MyString
+  city: MyString
+  relative_majority: false
+  type: 1
+  social_links: 
+
+two:
+  name: MyString
+  email: MyString
+  legislature: MyString
+  active: false
+  party: 1
+  birth_date: 2022-01-21
+  telephone: MyString
+  photo_url: MyString
+  legislative_experience: MyString
+  swearing_date: 2022-01-21
+  academic_preparation: MyString
+  location: MyString
+  last_degree_of_studies: MyString
+  district: MyString
+  city: MyString
+  relative_majority: false
+  type: 1
+  social_links: 
