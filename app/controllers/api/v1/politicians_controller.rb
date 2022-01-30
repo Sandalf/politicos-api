@@ -10,7 +10,8 @@ class Api::V1::PoliticiansController < ApplicationController
 
   # GET /politicians/1
   def show
-    render json: @politician
+    @politician = Politician.joins(:state).find_by(id: params[:id])
+    render json: @politician, serializer: PoliticianSerializer
   end
 
   # POST /politicians
