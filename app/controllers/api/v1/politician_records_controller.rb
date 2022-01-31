@@ -44,6 +44,12 @@ class Api::V1::PoliticianRecordsController < ApplicationController
     render json: @politician_records
   end
 
+  # GET /politician_records/administrative_history?politician_id=1
+  def administrative_history
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 2)
+    render json: @politician_records
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_politician_record

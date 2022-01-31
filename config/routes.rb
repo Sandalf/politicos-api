@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :states
       resources :politicians
       get '/politician_records/committee_history' => 'politician_records#committee_history'
+      get '/politician_records/administrative_history' => 'politician_records#administrative_history'
       resources :politician_records
     end
   end
