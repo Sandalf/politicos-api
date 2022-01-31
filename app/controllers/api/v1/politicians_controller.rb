@@ -3,7 +3,21 @@ class Api::V1::PoliticiansController < ApplicationController
 
   # GET /politicians
   def index
-    @politicians = Politician.all
+    where = {}
+
+    if params[:state_code]
+      where["state.code"] = params[:state_code]
+    end
+
+    if params[:category]
+      where["category"] = params[:category].to_i
+    end
+
+    if (where.empty?)
+      @politicians = Politician.all
+    else
+      @politicians = Politician.joins(:state).where(where)
+    end
 
     render json: @politicians
   end
