@@ -50,6 +50,36 @@ class Api::V1::PoliticianRecordsController < ApplicationController
     render json: @politician_records
   end
 
+  # GET /politician_records/legislative_history?politician_id=1
+  def legislative_history
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 3)
+    render json: @politician_records
+  end
+
+  # GET /politician_records/political_history?politician_id=1
+  def political_history
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 4)
+    render json: @politician_records
+  end
+
+  # GET /politician_records/academic_history?politician_id=1
+  def academic_history
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 5)
+    render json: @politician_records
+  end
+
+  # GET /politician_records/private_experience?politician_id=1
+  def private_experience
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 6)
+    render json: @politician_records
+  end
+
+  # GET /politician_records/other_experience?politician_id=1
+  def other_experience
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 7)
+    render json: @politician_records
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_politician_record

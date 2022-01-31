@@ -23,8 +23,8 @@ POLITICIAN_RECORD_TYPE = {
     legislative_history: 3,
     political_history: 4,
     academic_history: 5,
-    private_experience: 5,
-    other_experience: 6,
+    private_experience: 6,
+    other_experience: 7,
 }
 
 
