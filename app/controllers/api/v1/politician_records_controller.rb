@@ -38,6 +38,12 @@ class Api::V1::PoliticianRecordsController < ApplicationController
     @politician_record.destroy
   end
 
+  # GET /politician_records/committee_history?politician_id=1
+  def committee_history
+    @politician_records = PoliticianRecord.where(politician_id: params[:politician_id], category: 1)
+    render json: @politician_records
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_politician_record

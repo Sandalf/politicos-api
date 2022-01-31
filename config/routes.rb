@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :states
       resources :politicians
+      get '/politician_records/committee_history' => 'politician_records#committee_history'
       resources :politician_records
     end
   end
