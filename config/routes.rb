@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :states
+      get '/politicians/search' => 'politicians#search'
       resources :politicians
       get '/politician_records/committee_history' => 'politician_records#committee_history'
       get '/politician_records/administrative_history' => 'politician_records#administrative_history'

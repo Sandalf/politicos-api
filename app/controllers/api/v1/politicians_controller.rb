@@ -53,6 +53,15 @@ class Api::V1::PoliticiansController < ApplicationController
     @politician.destroy
   end
 
+  # GET /politicians/search
+  def search
+    @politicians = Politician.joins(:state).where(
+      'UNACCENT(politicians.name) ILIKE UNACCENT(?)', 
+      "%#{params[:text]}%").first(5)
+
+    render json: @politicians
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_politician
