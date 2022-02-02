@@ -82,8 +82,8 @@ def insert_politicians (data, category)
         politician['administrative_history'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:administrative_history]
             )
@@ -92,8 +92,8 @@ def insert_politicians (data, category)
         politician['legislative_history'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:legislative_history]
             )
@@ -102,8 +102,8 @@ def insert_politicians (data, category)
         politician['political_history'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:political_history]
             )
@@ -112,8 +112,8 @@ def insert_politicians (data, category)
         politician['academic_history'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:academic_history]
             )
@@ -122,8 +122,8 @@ def insert_politicians (data, category)
         politician['private_experience'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:private_experience]
             )
@@ -132,8 +132,8 @@ def insert_politicians (data, category)
         politician['other_experience'].each do |record|
             PoliticianRecord.create(
                 politician_id: deputy.id,
-                start_date: record['start_year'].present? ? Date.parse("Jan 1 #{record['start_year']}") : nil,
-                end_date: record['end_year'].present? ? Date.parse("Dic 31 #{record['end_year']}") : nil,
+                start_date: record['start_year'].present? ? Date.strptime("01 01 #{record['start_year']}", "%m %d %Y") : nil,
+                end_date: record['end_year'].present? ? Date.strptime("12 31 #{record['end_year']}", "%m %d %Y") : nil,
                 description: record['description']['es_MX'],
                 category: POLITICIAN_RECORD_TYPE[:other_experience]
             )

@@ -42,6 +42,9 @@ gem 'json', '~> 2.6', '>= 2.6.1'
 # Use ActiveModel::Serializers
 gem 'active_model_serializers', '~> 0.10.3'
 
+# Use logging
+gem 'rails_12factor'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
