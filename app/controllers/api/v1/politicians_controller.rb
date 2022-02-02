@@ -1,3 +1,5 @@
+require 'uri'
+require 'net/http'
 class Api::V1::PoliticiansController < ApplicationController
   before_action :set_politician, only: %i[ show update destroy ]
 
@@ -60,6 +62,19 @@ class Api::V1::PoliticiansController < ApplicationController
       "%#{params[:text]}%").first(5)
 
     render json: @politicians
+  end
+
+
+  # GET /politicians/image
+  def image
+    if params[:image_id]
+      img_url = "http://www.sil.gobernacion.gob.mx/Archivos/Fotos/#{params[:image_id]}.jpg"
+      url = URI.parse(img_url)
+      response = Net::HTTP.get_response(url)
+      send_data Base64.encode64(response.read_body), type: 'image/jpeg', disposition: 'inline'
+    else
+      render :status => 404
+    end 
   end
 
   private

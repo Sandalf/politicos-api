@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :states
       get '/politicians/search' => 'politicians#search'
+      get '/politicians/image' => 'politicians#image'
       resources :politicians
       get '/politician_records/committee_history' => 'politician_records#committee_history'
       get '/politician_records/administrative_history' => 'politician_records#administrative_history'
