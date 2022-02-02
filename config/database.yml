@@ -1,5 +1,5 @@
 default: &default
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV["RAILS_MAX_THREADS"] { 5 } %>
   timeout: 5000
   adapter: postgresql
   encoding: unicode  
@@ -7,8 +7,8 @@ default: &default
 development:
   <<: *default
   database: politicos
-  username: <%= ENV.fetch("RAILS_DB_USERNAME") %>
-  password: <%= ENV.fetch("RAILS_DB_PASSWORD") %>
+  username: <%= ENV["RAILS_DB_USERNAME"] %>
+  password: <%= ENV["RAILS_DB_PASSWORD"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
